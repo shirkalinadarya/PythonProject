@@ -8,8 +8,10 @@ from pygame.sprite import Group
 from gameover import Gameover
 from globals_val import score
 
-'''Welcome to My Own Doodle Jump. 
-'''
+'''Welcome to My Own Doodle Jump.
+To manage doodle use arrows ← and →,
+to shoot use arrow up ↑.
+Avoid aliens and remember that the strongest survives'''
 
 def run():
   pygame.init()
@@ -27,9 +29,9 @@ def run():
   doodle = Doodle(screen)
   alien = Alien(screen)
   bullets = Group()
-  platforms = Group() #ordinary platforms
-  moving_platforms = Group() #platforms which can move
-  crack_platforms = Group() #disposable platforms
+  platforms = Group()
+  moving_platforms = Group()
+  crack_platforms = Group()
   springs = Group() 
   gameover = Gameover(screen)
   controls.create_platforms(screen, platforms)
