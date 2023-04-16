@@ -3,7 +3,7 @@ import pygame
 class Doodle():
   def __init__(self, screen):
     self.screen = screen
-    self.image = pygame.image.load('images/doodle.png')
+    self.image = pygame.image.load('game/images/doodle.png')
     self.rect = self.image.get_rect()
     self.rect.centery = 0
     self.screen_rect = screen.get_rect()

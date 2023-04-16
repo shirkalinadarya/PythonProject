@@ -3,7 +3,7 @@ import pygame, random
 class Alien():
   def __init__(self, screen):
     self.screen = screen
-    self.image = pygame.image.load('images/alien.png')
+    self.image = pygame.image.load('game/images/alien.png')
     self.rect = self.image.get_rect()
     self.screen_rect = screen.get_rect()
     self.rect.centerx = random.randint(0, 650)

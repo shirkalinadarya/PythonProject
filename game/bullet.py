@@ -4,7 +4,7 @@ class Bullet(pygame.sprite.Sprite):
   def __init__(self, screen, doodle):
     super(Bullet, self).__init__()
     self.screen = screen
-    self.image = pygame.image.load('images/bullet.png')
+    self.image = pygame.image.load('game/images/bullet.png')
     self.rect = self.image.get_rect()
     self.screen_rect = screen.get_rect()
     self.speed = 3

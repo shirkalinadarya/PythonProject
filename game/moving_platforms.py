@@ -5,7 +5,7 @@ class MovingPlatform(Platform):
   def __init__(self, screen):
     super(Platform, self).__init__()
     self.screen = screen
-    self.image = pygame.image.load('images/moving_platform.png')
+    self.image = pygame.image.load('game/images/moving_platform.png')
     self.rect = self.image.get_rect()
     self.rect.x = float(325)
     self.rect.y = float(900)
@@ -16,7 +16,7 @@ class MovingPlatform(Platform):
     self.dist = 0   
 
   def moving_platform(self):
-    self.image = pygame.image.load('images/moving_platform.png')
+    self.image = pygame.image.load('game/images/moving_platform.png')
     self.rect = self.image.get_rect()
 
   def update_moving_platform(self):

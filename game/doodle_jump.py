@@ -1,7 +1,6 @@
 import pygame, controls
 import sys
 
-#from spring import Spring
 from doodle import Doodle
 from alien import Alien
 from platforms import Platform
@@ -9,6 +8,8 @@ from pygame.sprite import Group
 from gameover import Gameover
 from globals_val import score
 
+'''Welcome to My Own Doodle Jump. 
+'''
 
 def run():
   pygame.init()

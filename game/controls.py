@@ -63,9 +63,6 @@ def update(bg_color, screen, doodle, bullets, platforms,\
   screen.set_alpha(0)
   if alien.shown:
     alien.moving()
-    print("yes")
-    print(1)
-  print("1111")
   for bullet in bullets.sprites():
     bullet.output()
   for platform in moving_platforms:

@@ -3,7 +3,7 @@ import pygame, time
 class Gameover():
   def __init__(self, screen):
     self.screen = screen
-    self.image = pygame.image.load('images/gameover.png')
+    self.image = pygame.image.load('game/images/gameover.png')
     self.image = pygame.transform.scale(self.image, (550, 900))
     self.rect = self.image.get_rect()
     self.screen_rect = screen.get_rect()
