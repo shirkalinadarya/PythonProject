@@ -5,3 +5,5 @@ python3 game/doodle_jump.py
 **move -** ← → **and shoot -** ↑
 
 _You don't have to think in this game, just play_
+
+![Doodle](game/images/doodle.png)
