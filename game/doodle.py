@@ -32,12 +32,15 @@ class Doodle():
     self.touched = False
 
   def update(self, step):
+    '''If doodle overcame the border, the gime is finished'''
     if self.rect.centery > doodle_fall:
       self.finish = True
+    '''if doodle touched the platform, change direction'''
     if self.touched:
       self.mup = True
       self.mdown = False
       self.prev_y = 0
+    '''Move left and right'''
     if self.mright:
       if self.rect.right >= self.screen_rect.right + doodle_evasion:
         self.rect.left = -doodle_evasion + 1 
@@ -48,6 +51,7 @@ class Doodle():
         self.rect.x = oX + doodle_evasion - 1
       else:
         self.rect.centerx -= step_x_doodle
+    '''Move up until doodle doesn't overcome the length of his jump'''
     if self.mup:
       if (self.prev_y >= doodle_jump and not self.turbo) or \
         (self.prev_y >= doodle_jump_turbo and self.turbo):
@@ -60,6 +64,7 @@ class Doodle():
       else:
         self.prev_y += step
         self.rect.centery -= step
+    '''Move down'''
     if self.mdown:
       self.prev_y -= step
       self.rect.centery += step

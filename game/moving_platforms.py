@@ -21,6 +21,7 @@ class MovingPlatform(Platform):
     self.image = pygame.image.load('game/images/moving_platform.png')
     self.rect = self.image.get_rect()
 
+  '''Moving platforms move, so it is the moving left and right'''
   def update_moving_platform(self):
     if self.mright:
       self.dist += step_x

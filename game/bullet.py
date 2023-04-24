@@ -16,6 +16,7 @@ class Bullet(pygame.sprite.Sprite):
   def output(self):
     self.screen.blit(self.image, self.rect)    
 
+  '''If doodle shoot, the bullet moves up'''
   def update(self):
     self.y -= self.speed
     self.rect.y = self.y

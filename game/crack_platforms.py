@@ -18,6 +18,7 @@ class CrackPlatform(Platform):
     self.dist = 0   
     self.crashing = False
     
+  '''Platform moves down if it is crashed'''
   def crash(self):
     if (self.crashing):
       self.rect.y += step

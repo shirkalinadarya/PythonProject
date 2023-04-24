@@ -22,6 +22,7 @@ class Alien():
     self.shown = True
     self.screen.blit(self.image, self.rect)
 
+  '''Alien moves left and right'''
   def moving(self):
     if self.mright:
       self.pick += step_x
