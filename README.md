@@ -6,7 +6,7 @@ python3 game/doodle_jump.py
 
 _You don't have to think in this game, just play_
 <image
-  src="/images/doodle.jpg"
+  src="/game/images/doodle.png"
   alt="Doodle"
   caption="Doodle">
 ![Doodle](/game/images/doodle.png "Doodle")
