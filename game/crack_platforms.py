@@ -1,7 +1,7 @@
 import pygame
+import random
 from platforms import Platform
-from globals_val import *
-
+from globals_val import step, oX
 
 class CrackPlatform(Platform):
   def __init__(self, screen):
@@ -9,8 +9,8 @@ class CrackPlatform(Platform):
     self.screen = screen
     self.image = pygame.image.load('game/images/crack_platform.png')
     self.rect = self.image.get_rect()
-    self.rect.x = 325
-    self.rect.y = 900
+    self.rect.x = random.randint(0, oX)
+    self.rect.y = 0
     self.x = float(self.rect.x)
     self.y = float(self.rect.y)
     self.mleft = False

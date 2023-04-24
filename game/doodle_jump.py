@@ -6,7 +6,7 @@ from alien import Alien
 from platforms import Platform
 from pygame.sprite import Group
 from gameover import Gameover
-from globals_val import score
+from globals_val import oX, oY
 
 '''Welcome to My Own Doodle Jump.
 To manage doodle use arrows ← and →,
@@ -15,15 +15,7 @@ Avoid aliens and remember that the strongest survives'''
 
 def run():
   pygame.init()
-  global score
-  score = 0
-  font = pygame.font.Font(None, 60)
-  score_text = font.render(f'Score: {score}', True, (255, 255, 255))
-  score_rect = score_text.get_rect()
-  score_rect.center = (20, 10)
-  timer = pygame.time.Clock()
-  pygame.init()
-  screen = pygame.display.set_mode((650, 1000), pygame.SRCALPHA)
+  screen = pygame.display.set_mode((oX, oY), pygame.SRCALPHA)
   pygame.display.set_caption("My Doodle Jump")
   bg_color = (200, 230, 220)
   doodle = Doodle(screen)
@@ -45,7 +37,7 @@ def run():
     controls.touch_platform(doodle, platforms)
     controls.touch_platform(doodle, moving_platforms)
     controls.touch_platform(doodle, crack_platforms) 
-    controls.move_screen(screen, doodle, platforms, moving_platforms, crack_platforms, alien, score, springs)
+    controls.move_screen(screen, doodle, platforms, moving_platforms, crack_platforms, alien, springs)
     controls.touch_spring(doodle, springs)
     controls.touch_alien(doodle, alien)
     controls.crack_platforms_crash(crack_platforms)

@@ -1,5 +1,8 @@
 import pygame
 
+from globals_val import step_x_doodle, doodle_start_bottom, \
+  doodle_fall, doodle_evasion, oX, doodle_jump, doodle_jump_turbo
+
 class Doodle():
   def __init__(self, screen):
     self.screen = screen
@@ -8,7 +11,7 @@ class Doodle():
     self.rect.centery = 0
     self.screen_rect = screen.get_rect()
     self.rect.centerx = self.screen_rect.centerx
-    self.rect.bottom = 500
+    self.rect.bottom = doodle_start_bottom
     self.mright = False
     self.mleft = False
     self.mup = False
@@ -29,27 +32,28 @@ class Doodle():
     self.touched = False
 
   def update(self, step):
-    if self.rect.centery > 1300:
+    if self.rect.centery > doodle_fall:
       self.finish = True
     if self.touched:
       self.mup = True
       self.mdown = False
       self.prev_y = 0
     if self.mright:
-      if self.rect.right >= self.screen_rect.right + 100:
-        self.rect.left = -95
+      if self.rect.right >= self.screen_rect.right + doodle_evasion:
+        self.rect.left = -doodle_evasion + 1 
       else:
-        self.rect.centerx += 3
+        self.rect.centerx += step_x_doodle
     if self.mleft:
-      if self.rect.left <= self.screen_rect.left - 100:
-        self.rect.x = 745
+      if self.rect.left <= self.screen_rect.left - doodle_evasion:
+        self.rect.x = oX + doodle_evasion - 1
       else:
-        self.rect.centerx -= 3
+        self.rect.centerx -= step_x_doodle
     if self.mup:
-      if (self.prev_y >= 400 and not self.turbo) or (self.prev_y >= 900 and self.turbo):
+      if (self.prev_y >= doodle_jump and not self.turbo) or \
+        (self.prev_y >= doodle_jump_turbo and self.turbo):
         self.prev_y = 0
         if self.turbo:
-          step = 3
+          step = step_x_doodle
         self.turbo = False
         self.mup = False
         self.mdown = True

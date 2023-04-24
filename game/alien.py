@@ -1,4 +1,6 @@
 import pygame, random
+from globals_val import y_appear, alien_start, alien_move, step_x, oX
+
 
 class Alien():
   def __init__(self, screen):
@@ -6,15 +8,15 @@ class Alien():
     self.image = pygame.image.load('game/images/alien.png')
     self.rect = self.image.get_rect()
     self.screen_rect = screen.get_rect()
-    self.rect.centerx = random.randint(0, 650)
-    self.rect.y = -1000
+    self.rect.centerx = random.randint(0, oX)
+    self.rect.y = alien_start
     self.shown = False
     self.mright = True
     self.mleft = False
     self.pick = 0
 
   def set_coord(self):
-    self.rect.y = -300
+    self.rect.y = y_appear
         
   def draw(self):
     self.shown = True
@@ -22,14 +24,14 @@ class Alien():
 
   def moving(self):
     if self.mright:
-      self.pick += 1
-      self.rect.x += 1
-      if self.pick > 170:
+      self.pick += step_x
+      self.rect.x += step_x
+      if self.pick > alien_move:
         self.mright = False
         self.mleft = True
     if self.mleft:
-      self.pick -= 1
-      self.rect.x -= 1
+      self.pick -= step_x
+      self.rect.x -= step_x
       if self.pick < 0:
         self.mright = True
         self.mleft = False

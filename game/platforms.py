@@ -9,7 +9,6 @@ class Platform(pygame.sprite.Sprite):
     self.rect.x = 325
     self.rect.y = 900
     self.x = float(self.rect.x)
-    self.y = float(self.rect.y)
     self.mleft = False
     self.mright = True
     self.dist = 0
