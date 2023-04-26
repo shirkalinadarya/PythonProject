@@ -4,7 +4,10 @@ from platforms import Platform
 from globals_val import oX, step_x
 
 class MovingPlatform(Platform):
+  """class for funclions for object MovingPlatform"""
+
   def __init__(self, screen):
+    """fields of the object MovingPlatform"""
     super(Platform, self).__init__()
     self.screen = screen
     self.image = pygame.image.load('game/images/moving_platform.png')
@@ -16,13 +19,9 @@ class MovingPlatform(Platform):
     self.mleft = False
     self.mright = True
     self.dist = 0   
-
-  def moving_platform(self):
-    self.image = pygame.image.load('game/images/moving_platform.png')
-    self.rect = self.image.get_rect()
-
-  '''Moving platforms move, so it is the moving left and right'''
+ 
   def update_moving_platform(self):
+    """update coordinates of the object MovingPlatform"""
     if self.mright:
       self.dist += step_x
       self.rect.x += step_x

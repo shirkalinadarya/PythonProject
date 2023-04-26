@@ -4,7 +4,10 @@ from platforms import Platform
 from globals_val import step, oX
 
 class CrackPlatform(Platform):
+  """class for funclions for object CrackPlatform"""
+  
   def __init__(self, screen):
+    """fields of the object CrackPlatform"""
     super(Platform, self).__init__()
     self.screen = screen
     self.image = pygame.image.load('game/images/crack_platform.png')
@@ -17,8 +20,8 @@ class CrackPlatform(Platform):
     self.mright = True
     self.dist = 0   
     self.crashing = False
-    
-  '''Platform moves down if it is crashed'''
+
   def crash(self):
+    """platform moves down if it is crashed"""
     if (self.crashing):
       self.rect.y += step

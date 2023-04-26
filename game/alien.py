@@ -1,9 +1,11 @@
 import pygame, random
 from globals_val import y_appear, alien_start, alien_move, step_x, oX
 
-
 class Alien():
+  """class for funclions for object Alien"""
+
   def __init__(self, screen):
+    """fields of object Alien"""
     self.screen = screen
     self.image = pygame.image.load('game/images/alien.png')
     self.rect = self.image.get_rect()
@@ -16,14 +18,16 @@ class Alien():
     self.pick = 0
 
   def set_coord(self):
+    """set coordinates of the object Alien"""
     self.rect.y = y_appear
         
   def draw(self):
+    """draw the object Alien on the screen"""
     self.shown = True
     self.screen.blit(self.image, self.rect)
 
-  '''Alien moves left and right'''
   def moving(self):
+    """change coordinates of the object Alien"""
     if self.mright:
       self.pick += step_x
       self.rect.x += step_x

@@ -1,7 +1,10 @@
 import pygame
 
 class Platform(pygame.sprite.Sprite):
+  """class for funclions for object Platform"""
+
   def __init__(self, screen):
+    """fields of the object Platform"""
     super(Platform, self).__init__()
     self.screen = screen
     self.image = pygame.image.load('game/images/green_platform.png')
@@ -14,4 +17,5 @@ class Platform(pygame.sprite.Sprite):
     self.dist = 0
   
   def draw(self):
+    """draw the object Platform on the screen"""
     self.screen.blit(self.image, self.rect) 
